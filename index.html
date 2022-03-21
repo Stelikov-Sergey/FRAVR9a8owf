@@ -12,16 +12,18 @@
         <a-scene
             embedded
             loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
+            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         >
                 <a-image
                     src="assets/asset.jpeg"
                     look-at="[gps-camera]"
                     scale="1 1 1"
-                    gps-entity-place="latitude: 53.92453907876065; longitude: -332.33477303758264;"
+                    gps-entity-place="latitude: 53.92453907876065; longitude: -332.33477303758264;
+                                      "
                 ></a-image>
 
-            <a-camera gps-camera rotation-reader></a-camera>
+            <a-camera id='camera1' look-controls-enabled='false'
+                      arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' rotation-reader> </a-camera>
         </a-scene>
     </body>
 </html>
